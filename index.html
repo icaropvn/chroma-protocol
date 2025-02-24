@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Protocolo Chroma</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=close,volume_up" />
+</head>
+<body>
+    <main id="conteudoPrincipal">
+        <h1>Protocolo <span>chroma</span></h1>
+
+        <button id="comoFunciona">Como funciona?</button>
+
+        <div id="inputDiv">
+            <input id="inputTraducao" type="text" placeholder="Insira algo para traduzir...">
+            <button id="botaoTraduzir">Traduzir</button>
+        </div>
+        <div id="velocidadeDiv">
+            <label>
+                <input type="radio" name="velocidade" value="0.25">
+                x0.25
+            </label>
+            <label>
+                <input type="radio" name="velocidade" value="0.5">
+                x0.5
+            </label>
+            <label>
+                <input type="radio" name="velocidade" value="0.75">
+                x0.75
+            </label>
+            <label>
+                <input type="radio" name="velocidade" value="1" checked>
+                x1
+            </label>
+            <label>
+                <input type="radio" name="velocidade" value="1.5">
+                x1.5
+            </label>
+            <label>
+                <input type="radio" name="velocidade" value="2">
+                x2
+            </label>
+        </div>
+        <div id="canvaOutput"></div>
+    </main>
+
+    <dialog id="dialogLegenda">
+        <header>
+            <h1>Como funciona?</h1>
+            <span id="fecharDialog" class="material-symbols-outlined">close</span>
+        </header>
+        <main>
+            <h2>Cores identificadoras</h2>
+            <div id="coresContainer">
+                <div class="descCorContainer">
+                    <div class="identCor identVermelho">
+                        <span class="material-symbols-outlined iconeSom">volume_up</span>
+                    </div>
+                    <span>Vermelho</span>
+                </div>
+
+                <div class="descCorContainer">
+                    <div class="identCor identLaranja">
+                        <span class="material-symbols-outlined iconeSom">volume_up</span>
+                    </div>
+                    <span>Laranja</span>
+                </div>
+
+                <div class="descCorContainer">
+                    <div class="identCor identAmarelo">
+                        <span class="material-symbols-outlined iconeSom">volume_up</span>
+                    </div>
+                    <span>Amarelo</span>
+                </div>
+
+                <div class="descCorContainer">
+                    <div class="identCor identVerde">
+                        <span class="material-symbols-outlined iconeSom">volume_up</span>
+                    </div>
+                    <span>Verde</span>
+                </div>
+
+                <div class="descCorContainer">
+                    <div class="identCor identAzul">
+                        <span class="material-symbols-outlined iconeSom">volume_up</span>
+                    </div>
+                    <span>Azul</span>
+                </div>
+
+                <div class="descCorContainer">
+                    <div class="identCor identVioleta">
+                        <span class="material-symbols-outlined iconeSom">volume_up</span>
+                    </div>
+                    <span>Violeta</span>
+                </div>
+
+                <div class="descCorContainer">
+                    <div class="identCor identCinza">
+                        <span class="material-symbols-outlined iconeSom">volume_up</span>
+                    </div>
+                    <span>Cinza</span>
+                </div>
+            </div>
+            <div>
+                <h2>Representações</h2>
+                <h3>Alfabeto</h3>
+                <ul>
+                    <li>
+                        <div class="liContainer">
+                            A:
+                            <div class="corContainer">
+                                <span class="cor identAzul"></span>
+                                <span class="cor identAzul"></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="liContainer">
+                            B:
+                            <div class="corContainer">
+                                <span class="cor identVermelho"></span>
+                                <span class="cor identVermelho"></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="liContainer">
+                            C:
+                            <div class="corContainer">
+                                <span class="cor identVermelho"></span>
+                                <span class="cor identLaranja"></span>
+                            </div>
+                        </div>
+                    </li>
+                      <li>
+                        <div class="liContainer">
+                          D:
+                          <div class="corContainer">
+                            <span class="cor identVermelho"></span>
+                            <span class="cor identAmarelo"></span>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="liContainer">
+                          E:
+                          <div class="corContainer">
+                            <span class="cor identAzul"></span>
+                            <span class="cor identVioleta"></span>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="liContainer">
+                          F:
+                          <div class="corContainer">
+                            <span class="cor identVermelho"></span>
+                            <span class="cor identVerde"></span>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="liContainer">
+                          G:
+                          <div class="corContainer">
+                            <span class="cor identVermelho"></span>
+                            <span class="cor identAzul"></span>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="liContainer">
+                          H:
+                          <div class="corContainer">
+                            <span class="cor identVermelho"></span>
+                            <span class="cor identVioleta"></span>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="liContainer">
+                          I:
+                          <div class="corContainer">
+                            <span class="cor identAzul"></span>
+                            <span class="cor identVermelho"></span>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="liContainer">
+                          J:
+                          <div class="corContainer">
+                            <span class="cor identLaranja"></span>
+                            <span class="cor identVermelho"></span>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="liContainer">
+                          K:
+                          <div class="corContainer">
+                            <span class="cor identLaranja"></span>
+                            <span class="cor identLaranja"></span>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="liContainer">
+                          L:
+                          <div class="corContainer">
+                            <span class="cor identLaranja"></span>
+                            <span class="cor identAmarelo"></span>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="liContainer">
+                          M:
+                          <div class="corContainer">
+                            <span class="cor identLaranja"></span>
+                            <span class="cor identVerde"></span>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="liContainer">
+                          N:
+                          <div class="corContainer">
+                            <span class="cor identLaranja"></span>
+                            <span class="cor identAzul"></span>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="liContainer">
+                          O:
+                          <div class="corContainer">
+                            <span class="cor identAzul"></span>
+                            <span class="cor identLaranja"></span>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="liContainer">
+                          P:
+                          <div class="corContainer">
+                            <span class="cor identLaranja"></span>
+                            <span class="cor identVioleta"></span>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="liContainer">
+                          Q:
+                          <div class="corContainer">
+                            <span class="cor identAmarelo"></span>
+                            <span class="cor identVermelho"></span>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="liContainer">
+                          R:
+                          <div class="corContainer">
+                            <span class="cor identAmarelo"></span>
+                            <span class="cor identLaranja"></span>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="liContainer">
+                          S:
+                          <div class="corContainer">
+                            <span class="cor identAmarelo"></span>
+                            <span class="cor identAmarelo"></span>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="liContainer">
+                          T:
+                          <div class="corContainer">
+                            <span class="cor identAmarelo"></span>
+                            <span class="cor identVerde"></span>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="liContainer">
+                          U:
+                          <div class="corContainer">
+                            <span class="cor identAzul"></span>
+                            <span class="cor identAmarelo"></span>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="liContainer">
+                          V:
+                          <div class="corContainer">
+                            <span class="cor identAmarelo"></span>
+                            <span class="cor identAzul"></span>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="liContainer">
+                          W:
+                          <div class="corContainer">
+                            <span class="cor identAmarelo"></span>
+                            <span class="cor identVioleta"></span>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="liContainer">
+                          X:
+                          <div class="corContainer">
+                            <span class="cor identVerde"></span>
+                            <span class="cor identVermelho"></span>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="liContainer">
+                          Y:
+                          <div class="corContainer">
+                            <span class="cor identVerde"></span>
+                            <span class="cor identLaranja"></span>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="liContainer">
+                          Z:
+                          <div class="corContainer">
+                            <span class="cor identVerde"></span>
+                            <span class="cor identAmarelo"></span>
+                          </div>
+                        </div>
+                      </li>
+                </ul>
+
+                <h3>Números</h3>
+                <ul>
+                    <li>
+                        <div class="liContainer">
+                          0:
+                          <div class="corContainer">
+                            <span class="cor identAzul"></span>
+                            <span class="cor identVerde"></span>
+                          </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="liContainer">
+                          1:
+                          <div class="corContainer">
+                            <span class="cor identVioleta"></span>
+                            <span class="cor identVermelho"></span>
+                          </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="liContainer">
+                          2:
+                          <div class="corContainer">
+                            <span class="cor identVioleta"></span>
+                            <span class="cor identLaranja"></span>
+                          </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="liContainer">
+                          3:
+                          <div class="corContainer">
+                            <span class="cor identVioleta"></span>
+                            <span class="cor identAmarelo"></span>
+                          </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="liContainer">
+                          4:
+                          <div class="corContainer">
+                            <span class="cor identVioleta"></span>
+                            <span class="cor identVerde"></span>
+                          </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="liContainer">
+                          5:
+                          <div class="corContainer">
+                            <span class="cor identVioleta"></span>
+                            <span class="cor identAzul"></span>
+                          </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="liContainer">
+                          6:
+                          <div class="corContainer">
+                            <span class="cor identVioleta"></span>
+                            <span class="cor identVioleta"></span>
+                          </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="liContainer">
+                          7:
+                          <div class="corContainer">
+                            <span class="cor identVerde"></span>
+                            <span class="cor identVerde"></span>
+                          </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="liContainer">
+                          8:
+                          <div class="corContainer">
+                            <span class="cor identVerde"></span>
+                            <span class="cor identAzul"></span>
+                          </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="liContainer">
+                            9:
+                            <div class="corContainer">
+                                <span class="cor identVerde"></span>
+                                <span class="cor identVioleta"></span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+                <h3>Outros</h3>
+                <ul>
+                    <li>
+                        <div class="liContainer">
+                            ?:
+                            <div class="corContainer">
+                                <span class="cor identCinza"></span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+                <h3>Estabelecimento de Comunicação</h3>
+                <ul>
+                    <li>
+                        <div class="liContainer">
+                            Ausência/Fim da comunicação:
+                            <div class="corContainer">
+                                <span class="cor identPreto"></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="liContainer">
+                            Intervalo comunicativo:
+                            <div class="corContainer">
+                                <span class="cor identBranco"></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="liContainer">
+                            Solicitação de comunicação:
+                            <div class="corContainer">
+                                <span class="cor identAmarelo"></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="liContainer">
+                            Aceitar comunicação:
+                            <div class="corContainer">
+                                <span class="cor identVerde"></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="liContainer">
+                            Recusar comunicação:
+                            <div class="corContainer">
+                                <span class="cor identVermelho"></span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+    </dialog>
+
+    <script src="script.js"></script>
+    <script src="demo.js"></script>
+</body>
+</html>
